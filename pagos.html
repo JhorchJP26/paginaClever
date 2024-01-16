@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Pagos</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-image: url('images/logo\ tioo.png');
+      background-size: cover;
+      background-position: center;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      position: relative;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 10px;
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .payment-form {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+      color: #343a40;
+      position: relative;
+    }
+
+    h2 {
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+
+    .payment-methods {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .payment-option {
+      cursor: pointer;
+      padding: 15px;
+      border: 2px solid #007bff;
+      border-radius: 8px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .payment-option:hover {
+      background-color: #007bff;
+      color: #ffffff;
+    }
+
+    #yape, #transferencia {
+      display: none;
+      margin-top: 20px;
+      background-color: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #868e96;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="payment-form">
+      <h2>Seleccione su método de pago</h2>
+
+      <div class="payment-methods">
+        <div class="payment-option" onclick="showPayment('yape')">Pagar con Yape</div>
+        <div class="payment-option" onclick="showPayment('transferencia')">Transferencia Bancaria</div>
+      </div>
+
+      <div id="yape">
+        <p>Realice el pago a través de Yape al número: XXX-XXX-XXX</p>
+        <!-- Agregar aquí cualquier otra información necesaria para el pago con Yape -->
+      </div>
+
+      <div id="transferencia">
+        <p>Realice la transferencia a la siguiente cuenta bancaria:</p>
+        <p>Nombre del Banco: XXX</p>
+        <p>Número de Cuenta: XXX-XXX-XXX</p>
+        <!-- Agregar aquí cualquier otra información necesaria para la transferencia -->
+      </div>
+
+      <div class="footer">
+        <p>al realizar el pago mande la captura al 9333333333. <br>© 2024 Libros CjoaquinB. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <button class="back-button" onclick="goToHomePage()">Volver</button>
+  </div>
+
+  <script>
+    function showPayment(method) {
+      document.getElementById('yape').style.display = method === 'yape' ? 'block' : 'none';
+      document.getElementById('transferencia').style.display = method === 'transferencia' ? 'block' : 'none';
+    }
+
+    function goToHomePage() {
+      // Cambia la URL según tu estructura de carpetas y nombres de archivos
+      window.location.href = 'index.html';
+    }
+  </script>
+
+</body>
+</html>
